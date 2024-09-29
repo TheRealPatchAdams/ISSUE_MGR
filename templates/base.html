@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %} Sleezy - By ALL DAY {% endblock %}</title>
+
+    <!-- Bootstrap CSS -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRqaP1lrS0b6rnH8+67X0/d8KMTAnp6Ef8kUgGR8K" crossorigin="anonymous">
+
+    
+    <!-- Google Fonts for bold, artistic typography -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@900&family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    
+    <!-- External CSS Stylesheet -->
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+
+    <!-- Add a favicon for branding -->
+    <link rel="icon" type="image/png" href="{% static 'img/favicon.png' %}">
+</head>
+<body class="dark-theme">
+    <!-- Full-Screen Hero Section with an Artistic Image/Video -->
+    <header class="hero">
+        <div class="overlay">
+            <h1 class="hero-title">Sleezy</h1>
+            <p class="hero-subtitle">The Art of Sleeze by ALL DAY</p>
+        </div>
+        <!-- Video background or image background -->
+        <video autoplay muted loop class="hero-bg">
+            <source src="{% static 'video/sleezy-background.mp4' %}" type="video/mp4">
+        </video>
+    </header>
+    
+    <body>
+        <!-- Navbar -->
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+          <div class="container-fluid">
+            <a class="navbar-brand" href="{% url 'home' %}">Prime 2025</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+              <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                  <a class="nav-link" href="{% url 'home' %}">Home</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="{% url 'about' %}">About</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+      
+        <div class="container mt-5">
+          {% block content %}
+          {% endblock %}
+        </div>
+      </body>
+      
+
+    <!-- Main content section -->
+    <div class="content">
+        {% block content %} 
+        <!-- Custom content for each page goes here -->
+        {% endblock %}
+    </div>
+
+    <!-- Footer with social media links -->
+    <footer class="footer">
+        <ul class="social-media">
+            <li><a href="https://twitter.com/sleezy" target="_blank">Twitter</a></li>
+            <li><a href="https://instagram.com/sleezy" target="_blank">Instagram</a></li>
+            <li><a href="https://sleezy.com" target="_blank">Official Site</a></li>
+        </ul>
+        <p>&copy; 2024 Sleezy by ALL DAY. All Rights Reserved.</p>
+    </footer>
+
+    <!-- JavaScript for interactivity -->
+    <script src="{% static 'js/app.js' %}"></script>
+    <!-- Bootstrap JavaScript -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-qLCPQps1sAcdD6IHOB6faJMO+MLHD9khygo7Erb6GohRXb0N+RyP1WsOBz1CGm6G" crossorigin="anonymous"></script>
+
+</body>
+</html>
